@@ -7,8 +7,7 @@ const Schedule = () => {
     useEffect(() => {
         axios.get('https://raw.githubusercontent.com/Soklayy/tamdan-api/main/schedule.json')
             .then((response) => {
-                setData(response.data[today.getDay() - 1])
-                console.dir(response.data[today.getDay() - 1])
+                today.getDay()!=0&&setData(response.data[today.getDay()-1])
             })
     }, [])
 
@@ -16,7 +15,7 @@ const Schedule = () => {
     return (
         <div className='text-white space-y-5 bg-gray-800 p-4 rounded-2xl'>
             <span className="relative inline-block date uppercase font-medium text-green-500 tracking-widest">
-                {data.day}  {monthNames[today.getMonth()]} {today.getFullYear()}
+                {data?.day||'Sunday'}  {monthNames[today.getMonth()]} {today.getFullYear()}
             </span>
             {
                 data?.data?.map((data, key) => (
@@ -32,7 +31,10 @@ const Schedule = () => {
                             <span className="text-sm">{data.teacher}</span>
                         </div>
                     </div>
-                ))
+                ))|| 
+                <div className='w-full​​ text-2xl text-red-600 h-full flex items-center justify-center'>
+                    <p>ចុងសប្តាហ៍</p>
+                </div>
             }
         </div>
     )
