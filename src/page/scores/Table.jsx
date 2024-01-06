@@ -1,4 +1,6 @@
+import axios from "axios"
 import { monthNames } from "../../constants/Date"
+import { useEffect, useState } from "react"
 
 const Table = () => {
     const subjectFilterHandler = (e) => {
@@ -7,7 +9,17 @@ const Table = () => {
 
     const monthFilterHandler = (e) => {
         console.dir(e.target.value)
+
     }
+
+    const [data, setData] = useState([]);
+    useEffect(()=>{
+        axios.get('https://raw.githubusercontent.com/Soklayy/tamdan-api/main/score.json')
+        .then((response)=>{
+            setData(response.data)
+        })
+    },[])
+    
     return (
         <div className="pt-5 ​">
             <div className="my-2 flex sm:flex-row flex-col">
@@ -15,7 +27,7 @@ const Table = () => {
                     <div className="relative">
                         <select onChange={monthFilterHandler}
 
-                            class="appearance-none h-full rounded-l border block w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            className="appearance-none h-full rounded-l border block w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                         >
                             <option value='all'>All</option>
                             {
@@ -26,14 +38,14 @@ const Table = () => {
                         </select>
                         <div
                             className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                             </svg>
                         </div>
                     </div>
                     <div className="relative">
                         <select onChange={subjectFilterHandler}
-                            class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+                            className="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
                             <option>All</option>
                             {
                                 subject.map((subject, key) => (
@@ -62,7 +74,24 @@ const Table = () => {
                     </thead>
                     <tbody className="border-gray-700 text-white min-w-max">
 
-                        {monthNames.map((month, key) => (
+                        {data?.map((item, key) => (
+                            <tr className="border-b" key={key}>
+                                <td className="py-3 px-2 font-bold text-center table-score">
+                                    {item.month}
+                                </td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.mathematics}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.physics}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.chemistry}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.biology}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.earth}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.ethics}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.history}</td>
+                                <td className="py-3 px-2 text-center table-score">{item.subject.eography}</td>
+                            </tr>
+
+                        ))}
+
+                        {/* {monthNames.map((month, key) => (
                             <tr className="border-b" key={key}>
                                 <td className="py-3 px-2 font-bold text-center table-score">
                                     {month}
@@ -77,24 +106,7 @@ const Table = () => {
                                 <td className="py-3 px-2 text-center table-score">50%</td>
                             </tr>
 
-                        ))}
-
-                        {monthNames.map((month, key) => (
-                            <tr className="border-b" key={key}>
-                                <td className="py-3 px-2 font-bold text-center table-score">
-                                    {month}
-                                </td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                                <td className="py-3 px-2 text-center table-score">50%</td>
-                            </tr>
-
-                        ))}
+                        ))} */}
 
                     </tbody>
                 </table>
