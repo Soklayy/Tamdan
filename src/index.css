@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    @import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+
+    *{
+        @apply font-hanuman
+    }
+
+    #root {
+        @apply relative h-screen w-screen overflow-x-hidden overflow-y-auto bg-gray-900 
+    }
+
+}
+
+@layer components {
+    
+
+    .date{
+        @apply text-center w-full bg-gray-800 z-10;
+    }
+
+    .th-sum:first-child{
+        @apply rounded-l-lg
+    }
+
+    .th-sum:last-child{
+        @apply rounded-r-lg
+    }
+
+    .table-score:first-child{
+        @apply text-red-500
+    }
+
+}
