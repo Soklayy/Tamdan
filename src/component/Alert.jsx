@@ -6,9 +6,7 @@ const Alert = () => {
         <div className={`flex flex-col justify-center p-4 m-3 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl ${close}`}>
             <div className=" text-gray-400 flex items-center ">
                 <img className="w-6 mr-2" src="https://v1.tailwindcss.com/_next/static/media/tailwindcss-mark.6ea76c3b72656960a6ae5ad8b85928d0.svg" alt="taiwind css" />
-                <p> A free repository for community
-                    components at
-                    <a href="https://tailwindcomponents.com/u/aji" className="underline hover:underline-none ml-1 text-green-300" target="_blank">tailwindcomponets</a></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius libero tempora modi ab optio quia rerum</p>
                 <button type="button" className="ml-auto text-xs  font-medium tracking-wider text-gray-400 hover:text-green-400 transition ease-in duration-300"
                     onClick={()=> setClose('hidden')}
                 >
