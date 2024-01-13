@@ -6,33 +6,61 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
 
-    *{
+    * {
         @apply font-hanuman
     }
 
     #root {
-        @apply relative h-screen w-screen overflow-x-hidden overflow-y-auto bg-gray-900 
+        @apply relative h-screen w-screen overflow-y-auto bg-gray-900 
     }
 
+    
 }
 
 @layer components {
-    
 
-    .date{
+
+    .date {
         @apply text-center w-full bg-gray-800 z-10;
     }
 
-    .th-sum:first-child{
+    .th-sum:first-child {
         @apply rounded-l-lg
     }
 
-    .th-sum:last-child{
+    .th-sum:last-child {
         @apply rounded-r-lg
     }
 
-    .table-score:first-child{
+    .table-score:first-child {
         @apply text-red-500
     }
+
+    .scrollbar-w-2::-webkit-scrollbar {
+        width: 0.25rem;
+        height: 0.25rem;
+    }
+
+    .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+        --bg-opacity: 1;
+        background-color: #f7fafc;
+        background-color: rgba(247, 250, 252, var(--bg-opacity));
+    }
+
+    .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+        --bg-opacity: 1;
+        @apply bg-green-500;
+        /* background-color: #edf2f7; */
+        /* background-color: rgba(237, 242, 247, var(--bg-opacity)); */
+    }
+
+    .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+        border-radius: 0.25rem;
+    }
+
+    nav>a.active{
+        @apply text-green-500;
+    }
+
 
 }

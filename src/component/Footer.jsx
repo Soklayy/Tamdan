@@ -7,7 +7,7 @@ const Footer = () => {
                 <a href="#" target="_blank" className="flex font-sans text-white justify-center uppercase text-base font-bold items-center sm:mb-0">
                     ta<span className="text-green-500 font-sans">md</span>an
                 </a>
-                <span className="block text-sm text-gray-500 sm:text-center py-1 border-t dark:text-gray-400">
+                <span className="flex justify-center items-center gap-1 text-sm text-gray-500 sm:text-center py-1 border-t">
                     © 2023
                     <a href="#" className="hover:underline">
                         Tamdan education

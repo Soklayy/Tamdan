@@ -5,11 +5,12 @@ import Profile from "./Profile"
 import Calendar from "./Calendar"
 import Statistics from "./Statistics"
 import Schedule from "./Schedule"
+import ChatComponent from "../chat/Indext"
 
 const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-            <div className="container  m-4">
+            <div className="container m-4">
                 <div className="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
                     
                     <Profile />
@@ -24,7 +25,6 @@ const Home = () => {
                     </div>
                     
                 </div>
-
             </div>
         </div>
     )

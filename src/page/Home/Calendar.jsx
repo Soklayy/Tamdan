@@ -55,9 +55,9 @@ const Calendar = () => {
             </div>
             <div className="grid grid-cols-7 gap-2 p-4" id="calendar">
                 {daysOfWeek.map((day, key) => (
-                    <duv className='text-center text-white font-semibold' key={key}>
+                    <div className='text-center text-white font-semibold' key={key}>
                         {day}
-                    </duv>
+                    </div>
                 ))}
 
                 {[...Array(firstDayOfMonth)].map((nothing, day) => (

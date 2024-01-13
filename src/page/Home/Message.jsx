@@ -71,12 +71,10 @@ const Message = () => {
                     </div>
                     <div className="pl-2 truncate">
                         <p className="text-xs w-full text-gray-500 text-right mb-1">9:02pm</p>
-                        <p className="text-gray-300 items-center flex text-lg truncate">
+                        <div className="text-gray-300 items-center flex text-lg truncate">
                             <p className="text-xs">typing</p>
-                            <p className="animate-bounce">.</p>
-                            <p className="animate-bounce">.</p>
-                            <p className="animate-bounce">.</p>
-                        </p>
+                            <span className="animate-bounce">...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,12 +92,10 @@ const Message = () => {
                     </div>
                     <div className="pl-2 truncate">
                         <p className="text-xs w-full text-gray-500 text-right mb-1">9:02pm</p>
-                        <p className="text-gray-300 items-center flex text-lg truncate">
+                        <div className="text-gray-300 items-center flex text-lg truncate">
                             <p className="text-xs">typing</p>
-                            <p className="animate-bounce">.</p>
-                            <p className="animate-bounce">.</p>
-                            <p className="animate-bounce">.</p>
-                        </p>
+                            <p className="animate-bounce">...</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +114,7 @@ const Message = () => {
                     </div>
                     <div className="flex flex-col ml-3 min-w-0">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </div>
                 </div>
