@@ -21,7 +21,7 @@ const Table = () => {
     return (
         <>
             <div className='space-x-3 mt-3'>
-                <Filter titleOption='ថ្ងៃ' options={allday} onChangeHandler={e => setDay(+e.target.value)} />
+                <Filter titleOption='ថ្ងៃ' options={allday} onChangeHandler={e => setDay(e.target.value== 'default' ?e.target.value:+e.target.value)} />
                 {/* <Filter titleOption='សប្តាហ៍' options={monthNames} /> */}
                 <Filter titleOption='ខែ' options={monthNames} onChangeHandler={e => setMonth(e.target.value)}/>
             </div>
